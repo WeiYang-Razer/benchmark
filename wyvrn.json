@@ -1,0 +1,22 @@
+{
+  "name": "benchmark",
+  "version": "1.9.5.0",
+  "schemaVersion": 2,
+  "kind": "StaticLib",
+  "description": "TODO: one-line description of benchmark",
+  "dependencies": {},
+  "build": {
+    "system": "cmake",
+    "configs": [
+      "Debug",
+      "Release",
+      "RelWithDebInfo",
+      "MinSizeRel"
+    ],
+    "configure": [
+      "-DBENCHMARK_ENABLE_TESTING=OFF",
+      "-DBENCHMARK_ENABLE_GTEST_TESTS=OFF"
+    ],
+    "installDir": "install"
+  }
+}
