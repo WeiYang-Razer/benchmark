@@ -1,12 +1,17 @@
 {
   "name": "benchmark",
-  "version": "1.9.5.0",
+  "version": "1.10.0.0",
   "schemaVersion": 2,
   "kind": "StaticLib",
   "description": "TODO: one-line description of benchmark",
   "dependencies": {},
   "build": {
     "system": "cmake",
+    "generator": [
+      "Ninja Multi-Config",
+      "Visual Studio 17 2022",
+      "Visual Studio 16 2019"
+    ],
     "configs": [
       "Debug",
       "Release",
@@ -18,5 +23,13 @@
       "-DBENCHMARK_ENABLE_GTEST_TESTS=OFF"
     ],
     "installDir": "install"
+  },
+  "compatibility": {
+    "os": "exact",
+    "arch": "exact",
+    "compiler": "exact",
+    "compiler.version": "exact-or-newer",
+    "compiler.cppstd": "exact-or-newer",
+    "compiler.runtime": "exact"
   }
 }
