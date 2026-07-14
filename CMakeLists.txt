@@ -41,6 +41,7 @@ option(BENCHMARK_ENABLE_GTEST_TESTS "Enable building the unit tests which depend
 option(BENCHMARK_USE_BUNDLED_GTEST "Use bundled GoogleTest. If disabled, the find_package(GTest) will be used." ON)
 
 option(BENCHMARK_ENABLE_LIBPFM "Enable performance counters provided by libpfm" OFF)
+option(BENCHMARK_ENABLE_RUST_BINDINGS "Enable testing of the Rust bindings" OFF)
 
 # Export only public symbols
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
@@ -205,13 +206,13 @@ else()
   add_cxx_compiler_flag(-Wformat=2)
   if(BENCHMARK_ENABLE_WERROR)
       add_cxx_compiler_flag(-Werror)
+      add_cxx_compiler_flag(-pedantic-errors)
   endif()
   if (NOT BENCHMARK_ENABLE_TESTING)
     # Disable warning when compiling tests as gtest does not use 'override'.
     add_cxx_compiler_flag(-Wsuggest-override)
   endif()
   add_cxx_compiler_flag(-pedantic)
-  add_cxx_compiler_flag(-pedantic-errors)
   add_cxx_compiler_flag(-Wshorten-64-to-32)
   add_cxx_compiler_flag(-fstrict-aliasing)
   # Disable warnings regarding deprecated parts of the library while building

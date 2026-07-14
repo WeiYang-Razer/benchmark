@@ -5,7 +5,7 @@
 *.exe
 *.dylib
 *.cmake
-!/cmake/*.cmake
+!/cmake/**/*.cmake
 !/test/AssemblyTests.cmake
 *~
 *.swp
@@ -74,3 +74,5 @@ uv.lock
 /wyvrn.lock
 /CMakePresets.json
 /CMakeUserPresets.json
+# Rust build stuff
+/bindings/rust/target/
